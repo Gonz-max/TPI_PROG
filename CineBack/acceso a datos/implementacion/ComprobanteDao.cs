@@ -34,7 +34,7 @@ namespace CineBack.acceso_a_datos
                 cmd.Parameters.AddWithValue("@idDescuento", oComprobante.IdDescuento);
                 cmd.Parameters.AddWithValue("@idEstado", oComprobante.IdEstado);
                 cmd.Parameters.AddWithValue("@descripcion", oComprobante.Descripcion);
-                cmd.Parameters.AddWithValue("@presupuesto_nro", oComprobante.IdComprobante);
+                cmd.Parameters.AddWithValue("@comprobante_nro", oComprobante.IdComprobante);
                 cmd.ExecuteNonQuery();
 
                 SqlCommand cmdDetalle;
