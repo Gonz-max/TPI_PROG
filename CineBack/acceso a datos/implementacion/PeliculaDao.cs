@@ -41,7 +41,7 @@ namespace CineBack.acceso_a_datos.implementacion
 
 
 
-        //CREAR PELICULA, REVISAR
+        //CREAR PELICULA
         public bool Crear(Pelicula oPelicula)
         {
             //throw new NotImplementedException();
