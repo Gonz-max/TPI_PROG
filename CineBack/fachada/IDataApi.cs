@@ -13,5 +13,9 @@ namespace CineBack.fachada
 
         public bool SaveComprobante(Comprobante comprobante);
 
+        public bool DeleteComprobante(int nro);
+
+        public bool UpdateComprobante(Comprobante comprobante);
+
     }
 }

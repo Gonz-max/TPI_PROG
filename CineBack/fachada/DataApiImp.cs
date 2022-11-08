@@ -17,6 +17,8 @@ namespace CineBack.fachada
             dao = new ComprobanteDao();
         }
 
+
+
         public List<Entrada> GetEntradas()
         {
             return dao.GetEntradas();
@@ -26,6 +28,19 @@ namespace CineBack.fachada
         {
             return dao.Crear(comprobante);
         }
+
+        public bool DeleteComprobante(int nro)
+        {
+            return dao.Borrar(nro);
+        }
+
+        public bool UpdateComprobante(Comprobante comprobante) 
+        {
+            return dao.Actualizar(comprobante);
+
+        }
+
+
 
     }
 }

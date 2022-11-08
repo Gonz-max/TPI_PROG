@@ -17,6 +17,10 @@ namespace CineBack.dominio
         public DateTime FechaEntrada { get; set; }
 
 
+        public Entrada()
+        {
+
+        }
 
         public Entrada(int idEntrada, int idDetSala, int idFuncion, int idCliente, double precio, DateTime fechaEntrada)
         {

@@ -57,5 +57,32 @@ namespace CineWebApi.Controllers
         }
 
 
+        
+        [HttpDelete("/borrarcomprobante")]
+        public IActionResult DeleteComprobante(int nro)
+        {
+            return Ok(dataApi.DeleteComprobante(nro));
+        }
+
+
+        //REVISAR, DEVUELVE FALSE
+        [HttpPut("/actualizarcomprobante")]
+        public IActionResult UpdateComprobante(Comprobante comprobante)
+        {
+            return Ok(dataApi.UpdateComprobante(comprobante));
+        }
+
+
+        
+
+
+
+
+
+
+
+
+
+
     }
 }

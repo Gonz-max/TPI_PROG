@@ -15,6 +15,6 @@ namespace CineBack.acceso_a_datos
 
         bool Actualizar(Comprobante oComprobante);
 
-        bool Borrar (int nro);
+        bool Borrar(int nro);
     }
 }

@@ -73,7 +73,7 @@ namespace CineBack.acceso_a_datos
         //BORRAR COMPROBANTES
         public bool Borrar(int nro)
         {
-            string sp = "SP_ELIMINAR_COMPROBANTE";
+            string sp = "BORRAR_COMPROBANTE";
             List<Parametro> lst = new List<Parametro>();
             lst.Add(new Parametro("@comprobante_nro", nro));
             int afectadas = HelperDao.ObtenerInstancia().EjecutarSQL(sp, lst);
