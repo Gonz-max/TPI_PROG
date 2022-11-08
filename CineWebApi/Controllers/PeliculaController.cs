@@ -1,5 +1,5 @@
-﻿using CineBack.dominio;
-using CineBack.fachada;
+﻿using CineBack.fachada;
+using CineBack.soporte;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,23 +11,22 @@ namespace CineWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ComprobanteController : ControllerBase
+    public class PeliculaController : ControllerBase
     {
-
         private IDataApi dataApi; //punto de acceso a la API
 
-        public ComprobanteController()
+        public PeliculaController()
         {
             dataApi = new DataApiImp();
         }
 
-        [HttpGet("/entradas")]
+        [HttpGet("/peliculas")]
         public IActionResult GetProductos()
         {
-            List<Entrada> lst = null;
+            List<Pelicula> lst = null;
             try
             {
-                lst = dataApi.GetEntradas();
+                lst = dataApi.GetPeliculas();
                 return Ok(lst);
 
             }
@@ -38,17 +37,17 @@ namespace CineWebApi.Controllers
         }
 
 
-        [HttpPost("/comprobante")]
-        public IActionResult PostComprobante(Comprobante comprobante)
+        [HttpPost("/registrarPelicula")]
+        public IActionResult PostPelicula(Pelicula pelicula)
         {
             try
             {
-                if (comprobante == null)
+                if (pelicula == null)
                 {
                     return BadRequest("Datos de comprobante incorrectos!");
                 }
 
-                return Ok(dataApi.SaveComprobante(comprobante));
+                return Ok(dataApi.SavePelicula(pelicula));
             }
             catch (Exception)
             {
@@ -57,29 +56,20 @@ namespace CineWebApi.Controllers
         }
 
 
-        
-        [HttpDelete("/borrarcomprobante")]
-        public IActionResult DeleteComprobante(int nro)
+
+        [HttpDelete("/borrarPelicula")]
+        public IActionResult DeletePelicula(int nro)
         {
-            return Ok(dataApi.DeleteComprobante(nro));
+            return Ok(dataApi.DeletePelicula(nro));
         }
 
 
         
-        [HttpPut("/actualizarcomprobante")]
-        public IActionResult UpdateComprobante(Comprobante comprobante)
+        [HttpPut("/actualizarPelicula")]
+        public IActionResult UpdateComprobante(Pelicula pelicula)
         {
-            return Ok(dataApi.UpdateComprobante(comprobante));
+            return Ok(dataApi.UpdatePelicula(pelicula));
         }
-
-
-        
-
-
-
-
-
-
 
 
 

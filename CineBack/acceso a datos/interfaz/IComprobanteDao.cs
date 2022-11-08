@@ -1,4 +1,5 @@
 ﻿using CineBack.dominio;
+using CineBack.soporte;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace CineBack.acceso_a_datos
         bool Actualizar(Comprobante oComprobante);
 
         bool Borrar(int nro);
+        
     }
 }
