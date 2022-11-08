@@ -13,7 +13,7 @@ namespace CineBack.acceso_a_datos.implementacion
     public class PeliculaDao : IPeliculaDao
     {
 
-        //CONSULTAR PELICULAS, error al mostrar la clasificacion
+        //CONSULTAR PELICULAS
         public List<Pelicula> GetPeliculas()
         {
             List<Pelicula> lst = new List<Pelicula>();
@@ -41,7 +41,7 @@ namespace CineBack.acceso_a_datos.implementacion
 
 
 
-        //CREAR PELICULA
+        //CREAR PELICULA, REVISAR
         public bool Crear(Pelicula oPelicula)
         {
             //throw new NotImplementedException();
@@ -63,9 +63,12 @@ namespace CineBack.acceso_a_datos.implementacion
                 cmd.Parameters.AddWithValue("@idDirector", oPelicula.IdDirector);
                 cmd.Parameters.AddWithValue("@nombrePelicula", oPelicula.NombrePelicula);
                 cmd.Parameters.AddWithValue("@fechaEstreno", oPelicula.FechaEstreno);
+                
+                cmd.ExecuteNonQuery();
 
-
-                //parámetro de salida:
+                
+                //ESTO ES PARA SABER EL ID_PELICULA (IDENTITY), PERO CREO QUE NO HACE FALTA, SINO HAY QUE CAMBIAR EL SP
+                //parámetro de salida: 
 
                 /*SqlParameter pOut = new SqlParameter();
                 pOut.ParameterName = "@pelicula_nro";
